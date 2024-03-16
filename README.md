@@ -36,7 +36,7 @@ cd black-tea
 ```console
 chmod +x kurulum.sh
 ```
-```
+
 ```console
 . ./kurulum.sh,
 ```
