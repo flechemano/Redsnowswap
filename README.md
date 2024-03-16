@@ -11,9 +11,11 @@ https://www.npmjs.com/signup
 # ssh key aşamasında oluşacak ssk key in public key kısmını github hesabına eklemeniz lazım. ayarlar/ssh and gpg keys e girince sağ üstlerde "new ssh key" butonuna basın, herhangi bir isim verin, public keyi ekleyin kaydete basın. public key hatasız girilmeli. tam olarak, boşluk bile bırakmadan,"ssh-rsa ile başlayıp uzun eşittire benzeyen işaretle '===' biten kısma kadar. (eğer mail adresini boş geçmediyseniz mail@mail.com gibi, .com kısmına kadar olmalı.) . ssh key githuba eklenmez, o kullandığınız bilgisayarda durmalı.
 
 
-# proje anasayfası url si: "açtığın repoya giriş yaptığında tarayıcıdaki adres"
-# proje url'si : "projenin içindeyken sağ üst kısımlarda code kutusunda https sekmesindeki sonu .git olan url, ssh değil http sekmesindeki"
-# Description sorusuna projenin amacına dair bir şey ya da herhangi bir şey yazabilirsin
+# GitHub homapage URL: "açtığın repoya giriş yaptığında tarayıcıdaki adres"
+
+# GitHub repository  URL : "projenin içindeyken sağ üst kısımlarda code kutusunda https sekmesindeki"
+# GitHub repository SSH URL: " bu da ssh sekmesindeki adres"
+# Description sorusuna projenin amacına dair bir şey ya da herhangi bir şey yazabilirsin.
 # author : "github kullanıcı adı"
 # bu soruları birçok kez sorabilir her seferinde farklı dosyaları düzenlediği için.
 
@@ -28,10 +30,10 @@ https://www.npmjs.com/signup
 
 # repoyu indir ve kuruluma devam et
 ```console
-git clone https://github.com/flechemano/refill.git
+git clone https://github.com/flechemano/simpleteaproject.git
 ```
 ```console
-cd black-tea
+cd simpleteaproject
 ```
 ```console
 chmod +x kurulum.sh
