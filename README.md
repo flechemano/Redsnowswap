@@ -5,7 +5,7 @@ npmjs sitesine üye ol, mail doğrulaması isterse yap. kullanıcı adını ve �
 https://www.npmjs.com/signup
 ```
 # kurulum scripti bazı bilgiler isteyecek bunları önceden hazırla.
-# kuruluma başlamadan önce bir proje ismi belirle, başka projelerle isim benzerliği olmaması için random sayı ya da benzersiz harfler eklemek sorun çıkmasını önler. mesela blacktea yaparsam benzeri çom olabilir ama blacktea024 ihtimalleri düşürür, blacktea024jdjdb yaparsam büyük ihtimalle böyle bir proje yoktur. bu isimi belirledikten sonra bu isimle bir repo aç.
+# kuruluma başlamadan önce bir proje ismi belirle, başka projelerle isim benzerliği olmaması için random sayı ya da benzersiz harfler eklemek sorun çıkmasını önler. mesela blacktea yaparsam benzeri çok  olabilir ama blacktea024 ihtimalleri düşürür, blacktea024jdjdb yaparsam büyük ihtimalle böyle bir proje yoktur. bu isimi belirledikten sonra bu isimle bir repo aç.
 
 
 # ssh key aşamasında oluşacak ssk key in public key kısmını github hesabına eklemeniz lazım. ayarlar/ssh and gpg keys e girince sağ üstlerde "new ssh key" butonuna basın, herhangi bir isim verin, public keyi ekleyin kaydete basın. public key hatasız girilmeli. tam olarak, boşluk bile bırakmadan,"ssh-rsa ile başlayıp uzun eşittire benzeyen işaretle '===' biten kısma kadar. (eğer mail adresini boş geçmediyseniz mail@mail.com gibi, .com kısmına kadar olmalı.) . ssh key githuba eklenmez, o kullandığınız bilgisayarda durmalı.
