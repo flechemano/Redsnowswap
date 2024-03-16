@@ -38,5 +38,5 @@ chmod +x kurulum.sh
 ```
 
 ```console
-. ./kurulum.sh,
+. ./kurulum.sh
 ```
