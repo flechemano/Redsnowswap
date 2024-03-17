@@ -1,13 +1,14 @@
 # hazırlık  (ubuntu 22.04) 
 
 npmjs sitesine üye ol, mail doğrulaması isterse yap. kullanıcı adını ve şifrenle terminalden giriş yapacaksın.
-```console
-npm login
-```
-# çıktıdaki linki tarayıcıda aç, giriş yap, başarılı olursa " Logged in on https://registry.npmjs.org/. " yazması lazım  terminalde.
 
 ```console 
 https://www.npmjs.com/signup
+```
+
+# kullanıcı adı ve şifreyle giriş yap maile gelen otp kodunu gir.
+```console
+npm login --auth-type legacy
 ```
 # kurulum scripti bazı bilgiler isteyecek bunları önceden hazırla.
 # kuruluma başlamadan önce bir proje ismi belirle, başka projelerle isim benzerliği olmaması için random sayı ya da benzersiz harfler eklemek sorun çıkmasını önler. mesela blacktea yaparsam benzeri çok  olabilir ama blacktea024 ihtimalleri düşürür, blacktea024jdjdb yaparsam büyük ihtimalle böyle bir proje yoktur. bu isimi belirledikten sonra bu isimle bir repo aç.
