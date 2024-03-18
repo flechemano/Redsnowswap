@@ -27,6 +27,7 @@ read -p "Enter project name: " project_name
 read -p "Enter homepage URL: " homepage_url
 read -p "Enter author's name: " author_name
 read -p "Enter your mail addres: " mail_address
+read -p "ssh key için vereceğiniz isim: "sshkey_name
 
 read -p "SSH key icin herhangi bir isim (e.g., 'my_key'): " key_name
 ssh-keygen -t rsa -b 4096 -C "$mail_address" -f ~/.ssh/$key_name
@@ -49,6 +50,8 @@ git config --global user.name "$github_username"
 git init 
 git remote add origin "$repo_url"
 git pull orign main
+chmod 644 ~/.ssh/"$sshkey_name".pub
+chmod 600 ~/.ssh/"$sshkey_name"
 
 project_description="A decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens."
 
