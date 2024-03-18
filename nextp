@@ -14,9 +14,8 @@ rm -rf .git .github package-lock.json
 git init
 git config --global user.email "$mail_address"
 git config --global user.name "$github_username"
-git config --global init.defaultBranch main
 git remote add origin "$repo_url"
-git pull orign main
+git pull
 
 project_description="A decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens."
 
@@ -70,15 +69,13 @@ jq --arg new_author_name "$author_name" '.author = $new_author_name' package.jso
 
 echo "Updated package.json successfully."
 
-chmod +x "$0"
-
 npm install -y
     
 git add .
 git commit -m "Initial"
 
 git remote set-url origin git@github.com:"$github_username"/"$project_name".git
-git push -u origin main
+git push origin master --force
 
 echo " ignore github errors, keep publish your package"
 
