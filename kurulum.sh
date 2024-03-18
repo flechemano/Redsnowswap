@@ -47,11 +47,10 @@ rm -rf .git .github package-lock.json
 git init
 git config --global user.email "$mail_address"
 git config --global user.name "$github_username"
-git config --global init.defaultBranch main
 git remote add origin "$repo_url"
-git pull orign main
-chmod 644 ~/.ssh/"$key_name".pub
-chmod 600 ~/.ssh/"$key_name"
+git pull
+chmod 644 /root/.ssh/"$key_name".pub
+chmod 600 /root/.ssh/"$key_name"
 
 project_description="A decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens."
 
@@ -113,7 +112,7 @@ git add .
 git commit -m "Initial"
 
 git remote set-url origin git@github.com:"$github_username"/"$project_name".git
-git push -u origin main
+git push origin master --force
 
 echo " ignore github errors, keep publish your package"
 
