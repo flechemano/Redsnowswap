@@ -42,3 +42,11 @@ chmod +x kurulum.sh
 ```console
 . ./kurulum.sh
 ```
+
+# Kurulum yapmadan tekrar denemek için
+```conlose
+cd refill
+```
+```console
+chmod +x nextp
+```
