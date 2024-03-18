@@ -12,10 +12,11 @@ mv simpleteaproject "$project_name"
 cd "$project_name"
 rm -rf .git .github package-lock.json 
 git init
-git remote set-url origin git@github.com:"$github_username"/"$project_name".git
+git remote add origin git@github.com:"$github_username"/"$project_name".git
 git config --global user.email "$mail_address"
 git config --global user.name "$github_username"
 git branch -M main 
+git checkout main
 git pull origin main
 
 project_description="A decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens."
@@ -71,7 +72,7 @@ jq --arg new_author_name "$author_name" '.author = $new_author_name' package.jso
 echo "Updated package.json successfully."
 
 npm install -y
-    
+
 git add .
 git commit -m "Initial"
 
@@ -80,6 +81,6 @@ git push origin main --force
 echo " ignore github errors, keep publish your package"
 
 npm version 1.2.3
-npm publish --acces=public
+npm publish --access=public
 
-echo "check your published package at: https://npmjs.com/"$github_username"/"$project_name" "
+echo "check your published package at: https://npmjs.com/package/"$project_name" "
