@@ -43,12 +43,12 @@ read -p "Public keyi githuba ekledikten sonra Enter e basın..."
 git clone "https://github.com/flechemano/simpleteaproject.git"
 mv simpleteaproject "$project_name"
 cd "$project_name"
-rm -rf .git .github package-lock.json .gitignore
+rm -rf .git .github package-lock.json 
 git config --global user.email "$mail_address"
 git config --global user.name "$github_username"
 git init 
 git remote add origin "$repo_url"
-git pull
+git pull orign main
 
 project_description="A decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens."
 
