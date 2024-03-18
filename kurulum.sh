@@ -44,9 +44,10 @@ git clone "https://github.com/flechemano/simpleteaproject.git"
 mv simpleteaproject "$project_name"
 cd "$project_name"
 rm -rf .git .github package-lock.json 
+git init
 git config --global user.email "$mail_address"
 git config --global user.name "$github_username"
-git init 
+git config --global init.defaultBranch main
 git remote add origin "$repo_url"
 git pull orign main
 chmod 644 ~/.ssh/"$key_name".pub
