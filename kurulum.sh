@@ -28,7 +28,7 @@ read -p "Enter author's name: " author_name
 read -p "Enter your mail addres: " mail_address
 
 read -p "SSH key icin herhangi bir isim (e.g., 'my_key'): " key_name
-ssh-keygen -t rsa -b 4096 -C "$github_username" -f ~/.ssh/$key_name
+ssh-keygen -t rsa -b 4096 -C "$mail_address" -f ~/.ssh/$key_name
 if [ $? -eq 0 ]; then
     echo "SSH key generated successfully."
 else
@@ -41,9 +41,12 @@ cat ~/.ssh/$key_name.pub
 read -p "Public keyi githuba ekledikten sonra Enter e basın..."
 git clone "$repo_url"
 cd "${repo_url##*/}"
-rm -rf .git .github package-lock.json
+rm -rf .git .github package-lock.json .gitignore
 git config --global user.email "$mail_address"
 git config --global user.name "$github_username"
+git init 
+git remote add origin "$repo_url"
+git pull
 
 project_description="A decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens."
 
@@ -102,19 +105,12 @@ chmod +x "$0"
 npm install 
 npm doctor
 npm audit fix --force 
+echo "ignore small errors"
 
-
-echo "# simpleteaproject" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
 git branch -M main
-
 git add .
-git commit . -m "Initial commit"
+git commit -m "Initial commit"
 
-# git remote add origin "$repo_url"
-git remote add  origin git@github.com:"$github_username"/"$project_name".git
 git push -u origin main
 
 #npm version 1.2.3
