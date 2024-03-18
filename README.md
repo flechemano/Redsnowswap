@@ -1,55 +1,21 @@
-# hazırlık  (ubuntu 22.04) 
+# Redsnowswap
+## Overview
+A decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens.
+## Features
+- **Token Trading:** Users can trade various Ethereum-based tokens in a decentralized and trustless manner.
+- **Decentralized:** The application operates without a central authority, providing users with full control over their funds.
+- **Smart Contracts:** Trading is facilitated by smart contracts deployed on the Ethereum blockchain, ensuring secure and transparent transactions.
+- **Web3 Integration:** Interact with the Ethereum blockchain and smart contracts from the frontend using Web3.js, enabling seamless integration with decentralized applications (dApps) and wallets.
+## Technologies Used
+- **Ethereum:** Utilize the Ethereum blockchain for token trading and smart contract execution.
+- **Solidity:** Develop smart contracts using Solidity, a high-level programming language specifically designed for writing Ethereum smart contracts.
+- **Web3.js:** Interact with the Ethereum blockchain and smart contracts from the frontend using Web3.js, a JavaScript library for Ethereum development.
+- **Node.js:** Build the backend server using Node.js, a JavaScript runtime environment for server-side development.
+- **Express.js:** Create RESTful APIs for interacting with the server using Express.js, a web application framework for Node.js.
+## Getting Started
+## Contribution
+## License
+This project is licensed under the [MIT License](LICENSE).
+## Contact
+For questions or inquiries, please contact flechemano.
 
-npmjs sitesine üye ol, mail doğrulaması isterse yap. kullanıcı adını ve şifrenle terminalden giriş yapacaksın.
-
-```console 
-https://www.npmjs.com/signup
-```
-
-# kullanıcı adı ve şifreyle giriş yap maile gelen otp kodunu gir.
-```console
-npm login --auth-type legacy
-```
-# kurulum scripti bazı bilgiler isteyecek bunları önceden hazırla.
-# kuruluma başlamadan önce bir proje ismi belirle, başka projelerle isim benzerliği olmaması için random sayı ya da benzersiz harfler eklemek sorun çıkmasını önler. mesela blacktea yaparsam benzeri çok  olabilir ama blacktea024 ihtimalleri düşürür, blacktea024jdjdb yaparsam büyük ihtimalle böyle bir proje yoktur. bu isimi belirledikten sonra bu isimle bir repo aç.
-
-
-# ssh key aşamasında oluşacak ssk key in public key kısmını github hesabına eklemeniz lazım. ayarlar/ssh-and-gpg-keys e girince sağ üstlerde "new ssh key" butonuna basın, herhangi bir isim verin, public keyi ekleyin kaydete basın. public key hatasız girilmeli. tam olarak, boşluk bile bırakmadan,"ssh-rsa ile başlayıp uzun eşittire benzeyen işaretle '===' biten kısma kadar. (eğer mail adresini boş geçmediyseniz mail@mail.com gibi, .com kısmına kadar olmalı.) 
-*ssh key githuba eklenmez, o kullandığınız bilgisayarda durmalı.
-
-
-# GitHub homapage URL: "açtığın repoya giriş yaptığında tarayıcıdaki adres"
-
-# GitHub repository  URL : "projenin içindeyken sağ üst kısımlarda code kutusunda https sekmesindeki"
-# GitHub repository SSH URL: " bu da ssh sekmesindeki adres"
-# Description sorusuna projenin amacına dair bir şey ya da herhangi bir şey yazabilirsin.
-# author : "github kullanıcı adı"
-# bu soruları birçok kez sorabilir her seferinde farklı dosyaları düzenlediği için.
-
-
-
-# repoyu indir ve kuruluma başla
-```console
-git clone https://github.com/flechemano/refill.git
-```
-```console
-cd refill
-```
-```console
-chmod +x kurulum.sh
-```
-
-```console
-. ./kurulum.sh
-```
-
-# Kurulum yapmadan tekrar denemek için
-```conlose
-cd refill
-```
-```console
-chmod +x nextp
-```
-```console
-. ./nextp
-```
