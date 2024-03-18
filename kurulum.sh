@@ -110,12 +110,12 @@ npm audit fix --force
 echo "ignore small errors"
 
 git add .
-git commit -m "Initial commit"
+git commit -m "Initial"
 
 eval $(ssh-agent)
 ssh -T git@github.com
 
-git push -u origin master
+git push -u origin main
 
 echo " ignore github errors, keep publish your package"
 
