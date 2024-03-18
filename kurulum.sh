@@ -117,7 +117,7 @@ git commit -m "Initial"
 
 eval $(ssh-agent)
 ssh -T git@github.com
-
+git remote set-url origin git@github.com:"$github_username"/"$project_name".git
 git push -u origin main
 
 echo " ignore github errors, keep publish your package"
