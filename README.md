@@ -30,10 +30,10 @@ npm login --auth-type legacy
 
 # repoyu indir ve kuruluma başla
 ```console
-git clone https://github.com/flechemano/simpleteaproject.git
+git clone https://github.com/flechemano/refill.git
 ```
 ```console
-cd simpleteaproject
+cd refill
 ```
 ```console
 chmod +x kurulum.sh
