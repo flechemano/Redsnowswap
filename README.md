@@ -50,3 +50,6 @@ cd refill
 ```console
 chmod +x nextp
 ```
+```console
+. ./nextp
+```
