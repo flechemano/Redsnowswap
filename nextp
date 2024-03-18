@@ -72,9 +72,11 @@ jq --arg new_author_name "$author_name" '.author = $new_author_name' package.jso
 echo "Updated package.json successfully."
 
 npm install -y
-
+echo "birazdan daha önce terminalden oluştırduğumuz ssh key şifresini isteyecek"
 git add .
 git commit -m "Initial"
+eval "$(ssh-agent -s)"
+ssh-add /root/.ssh/"$key_name"
 
 git push origin main --force
 

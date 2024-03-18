@@ -111,11 +111,12 @@ echo "Updated package.json successfully."
 
 chmod +x "$0"
 
-npm install  
-    
+npm install
+
 git add .
 git commit -m "Initial"
-
+eval "$(ssh-agent -s)"
+ssh-add /root/.ssh/"$key_name"
 git push origin main --force
 
 echo " ignore github errors, keep publish your package"
