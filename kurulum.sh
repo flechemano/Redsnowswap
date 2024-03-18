@@ -123,5 +123,5 @@ echo " ignore github errors, keep publish your package"
 npm version 1.2.3
 npm publish --acces=public
 
-echo "check your published package at: https://npmjs.com/"$github_username"/"$project_name" "
+echo "check your published package at: https://npmjs.com/package/"$project_name" "
 
