@@ -39,8 +39,9 @@ ssh-add ~/.ssh/$key_name
 echo "github settin/ssh-and-gpg-keys e eklenecek public key:"
 cat ~/.ssh/$key_name.pub
 read -p "Public keyi githuba ekledikten sonra Enter e basın..."
-git clone "$repo_url"
-cd "${repo_url##*/}"
+git clone "https://github.com/flechemano/simpleteaproject.git"
+mv simpleteaproject "$project_name"
+cd "$project_name"
 rm -rf .git .github package-lock.json .gitignore
 git config --global user.email "$mail_address"
 git config --global user.name "$github_username"
@@ -107,14 +108,18 @@ npm doctor
 npm audit fix --force 
 echo "ignore small errors"
 
-git branch -M main
 git add .
 git commit -m "Initial commit"
 
-git push -u origin main
+eval $(ssh-agent)
+ssh -T git@github.com
 
-#npm version 1.2.3
-#npm publish --acces=public
+git push -u origin master
 
-echo "Script completed successfully!"
+echo " ignore github errors, keep publish your package"
+
+npm version 1.2.3
+npm publish --acces=public
+
+echo "check your published package at: https://npmjs.com/"$github_username"/"$project_name" "
 
