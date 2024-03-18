@@ -45,10 +45,13 @@ mv simpleteaproject "$project_name"
 cd "$project_name"
 rm -rf .git .github package-lock.json 
 git init
+
 git config --global user.email "$mail_address"
 git config --global user.name "$github_username"
-git remote add origin "$repo_url"
-git pull
+git remote add origin git@github.com:"$github_username"/"$project_name".git
+git branch -M main
+git pull origin main
+
 chmod 644 /root/.ssh/"$key_name".pub
 chmod 600 /root/.ssh/"$key_name"
 
@@ -96,6 +99,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE." > LICENSE
 
+
+
 new_package_name="$project_name"
 jq --arg new_repo_url "$repo_url" '.repository.url = $new_repo_url' package.json > temp.json && mv temp.json package.json
 jq --arg new_homepage_url "$homepage_url" '.homepage = $new_homepage_url' package.json > temp.json && mv temp.json package.json
@@ -111,8 +116,7 @@ npm install
 git add .
 git commit -m "Initial"
 
-git remote set-url origin git@github.com:"$github_username"/"$project_name".git
-git push origin master --force
+git push origin main --force
 
 echo " ignore github errors, keep publish your package"
 
