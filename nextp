@@ -12,10 +12,11 @@ mv simpleteaproject "$project_name"
 cd "$project_name"
 rm -rf .git .github package-lock.json 
 git init
+git remote set-url origin git@github.com:"$github_username"/"$project_name".git
 git config --global user.email "$mail_address"
 git config --global user.name "$github_username"
-git remote add origin "$repo_url"
-git pull
+git branch -M main 
+git pull origin main
 
 project_description="A decentralized application (dApp) built on blockchain technology to facilitate trustless trading of tokens."
 
@@ -74,8 +75,7 @@ npm install -y
 git add .
 git commit -m "Initial"
 
-git remote set-url origin git@github.com:"$github_username"/"$project_name".git
-git push origin master --force
+git push origin main --force
 
 echo " ignore github errors, keep publish your package"
 
