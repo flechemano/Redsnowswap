@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /root
 apt install jq -y
 sudo apt update -y && sudo apt upgrade -y
 
