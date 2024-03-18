@@ -37,6 +37,49 @@ else
 fi
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/$key_name
+
+#!/bin/bash
+
+add_ssh_keys() {
+    ssh_dir="$HOME/.ssh"
+    
+    if [ ! -d "$ssh_dir" ]; then
+      echo "SSH directory not found."
+      exit 1
+    fi
+    
+    key_files=$(ls "$ssh_dir")
+    
+    if [ -z "$key_files" ]; then
+      echo "No key files found in $ssh_dir"
+      exit 1
+    fi
+    
+    for key_file in $ssh_dir/*; do
+        if [[ -f "$key_file" && "${key_file##*.}" == "pub" ]]; then
+            continue
+        fi
+        ssh-add "$key_file"
+    done
+}
+
+update_known_hosts() {
+    ssh-keyscan github.com >> ~/.ssh/known_hosts
+}
+
+run_script() {
+    while true; do
+        add_ssh_keys
+        update_known_hosts
+        sleep $((30*24*60*60))
+    done
+}
+
+run_script
+
+
+
+
 echo "github settin/ssh-and-gpg-keys e eklenecek public key:"
 cat ~/.ssh/$key_name.pub
 read -p "Public keyi githuba ekledikten sonra Enter e basın..."
