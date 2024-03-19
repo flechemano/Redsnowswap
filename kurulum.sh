@@ -38,7 +38,10 @@ fi
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/$key_name
 
-#!/bin/bash
+
+start_ssh_agent() {
+    eval $(ssh-agent -s) >/dev/null
+}
 
 add_ssh_keys() {
     ssh_dir="$HOME/.ssh"
@@ -59,7 +62,7 @@ add_ssh_keys() {
         if [[ -f "$key_file" && "${key_file##*.}" == "pub" ]]; then
             continue
         fi
-        ssh-add "$key_file"
+        SSH_ASKPASS=/bin/echo DISPLAY= ssh-add "$key_file" </dev/null
     done
 }
 
@@ -68,15 +71,14 @@ update_known_hosts() {
 }
 
 run_script() {
+    start_ssh_agent
+    add_ssh_keys
+    update_known_hosts
+    
     while true; do
-        add_ssh_keys
-        update_known_hosts
         sleep $((30*24*60*60))
     done
 }
-
-run_script
-
 
 
 
